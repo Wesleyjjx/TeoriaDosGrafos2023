@@ -8,7 +8,7 @@ int main()
 {
     int l, c;
     ofstream arq;
-    arq.open("matrizDeAdjacencias.txt");
+    arq.open("dadosGrafo.txt");
     arq << "4 0 1 1 0 1 0 1 0 1 1 0 1 0 0 1 0" << endl;
     /*arq << "1 0 1 0" << endl;
     arq << "1 1 0 1" << endl;
@@ -17,7 +17,7 @@ int main()
 
     ifstream arqA;
     string linha;
-    arqA.open("matrizDeAdjacencias.txt");
+    arqA.open("dadosGrafo.txt");
     arqA >> l;
     c = l;
     int m[l][c];
@@ -37,18 +37,29 @@ int main()
         }
         cout << endl;
     }
-
-    /*if (arqA.is_open())
+    arqA.close();
+    ofstream arqB;
+    arqB.open("matrizDeAdjacencias.txt");
+    for (int i = 0; i < l; i++)
     {
-        while (getline(arqA, linha))
+        for (int j = 0; j < c; j++)
         {
-            cout << linha << endl;
+            arqB << m[i][j] << " - ";
         }
-        arqA.close();
+        arqB << "\n";        
     }
-    else
-    {
-        cout << "Nao foi possivel abrir o arquivo" << endl;
-    }*/
-    return 0;
-}
+    arqB.close();
+        /*if (arqA.is_open())
+        {
+            while (getline(arqA, linha))
+            {
+                cout << linha << endl;
+            }
+            arqA.close();
+        }
+        else
+        {
+            cout << "Nao foi possivel abrir o arquivo" << endl;
+        }*/
+        return 0;
+    }
