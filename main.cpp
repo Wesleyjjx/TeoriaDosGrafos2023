@@ -9,8 +9,7 @@ int main()
     int l, c;
     ofstream arq;
     arq.open("matrizDeAdjacencias.txt");
-    arq << "4" << endl;
-    arq << "0 1 1 0 1 0 1 0 1 1 0 1 0 0 1 0" << endl;
+    arq << "4 0 1 1 0 1 0 1 0 1 1 0 1 0 0 1 0" << endl;
     /*arq << "1 0 1 0" << endl;
     arq << "1 1 0 1" << endl;
     arq << "0 0 1 0" << endl;*/
