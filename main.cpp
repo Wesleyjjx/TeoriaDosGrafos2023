@@ -27,8 +27,8 @@ int main()
     }
     for(int i=0; i<l;i++){
         for(int j=0; j<l; j++){
-            arq >> itemA;
-            grafo1.insereMatrizAdjacencia(itemA,i,j);
+            arq >> valor;
+            grafo1.insereMatrizAdjacencia(valor,i,j);
         }
     }
     arq.close();
@@ -39,6 +39,7 @@ int main()
         cout << "Digite 3 para imprimir o peso de uma aresta." << endl;
         cout << "Digite 4 para imprimir a matriz de adjacencias" << endl;
         cout << "Digite 5 para imprimir a lista de vertices." << endl;
+        cout << "Digite 6 para criar um arquivo txt com a matriz de adjacencias." << endl;
         cin >> opcao;
             if(opcao == 1){
 
@@ -74,6 +75,20 @@ int main()
 
                 grafo1.imprimirVertices();
 
+            }else if(opcao == 6){
+
+                ofstream arqA;
+                arqA.open("matrizDeAdjacencias.txt");
+                for (int i = 0; i < l; i++)
+                {
+                    for (int j = 0; j < c; j++)
+                    {
+                        valor = grafo1.retornaAdjacencia(i,j);
+                        arqA << valor << "  ";
+                    }
+                    arqA << "\n";
+                }
+                arqA.close();
             }
 
     }while(opcao != 0);
@@ -106,5 +121,6 @@ int main()
         arqA << "\n";
     }
     arqA.close();*/
-    return 0;
+
+return 0;
 }
