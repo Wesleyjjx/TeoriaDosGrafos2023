@@ -21,6 +21,7 @@ class Grafo{
     void insereAresta(TipoItem NoSaida,TipoItem noEntrada, int peso);
     int obterPeso(TipoItem NoSaida, TipoItem NoEntrada);
     int obterGrau(TipoItem);
+    void insereMatrizAdjacencia(TipoItem,TipoItem,TipoItem);
     void imprimirMatriz();
     void imprimirVertices();
 };

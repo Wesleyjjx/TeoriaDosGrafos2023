@@ -29,7 +29,9 @@ Grafo::~Grafo() // destrutor
     }
     delete [] matrizAdjcencias;
 }
-
+void Grafo::insereMatrizAdjacencia(TipoItem item, TipoItem i,TipoItem j){
+    matrizAdjcencias[i][j] = item;
+}
 int Grafo::obterIndice(TipoItem item)
 {
     int indice = 0;

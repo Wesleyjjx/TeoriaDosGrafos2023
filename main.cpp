@@ -25,7 +25,13 @@ int main()
     {
             grafo1.insereVertice(i);
     }
-    
+    for(int i=0; i<l;i++){
+        for(int j=0; j<l; j++){
+            arq >> itemA;
+            grafo1.insereMatrizAdjacencia(itemA,i,j);
+        }
+    }
+    arq.close();
     do{
         cout << "Digite 0 para parar o algoritmo." << endl;
         cout << "Digite 1 para inserir uma aresta." << endl;
