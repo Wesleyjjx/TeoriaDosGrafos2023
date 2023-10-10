@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <iomanip>
+#include "grafo.h"
 
 using namespace std;
 
@@ -16,7 +17,61 @@ int main()
     //arqA.open("dadosGrafo1.txt");
     arq >> l;
     c = l;
-    int m[l][c];
+    int valorArestanula = 0;
+    Grafo grafo1(l,valorArestanula);
+    TipoItem itemA, itemB;
+    int opcao, valor, peso;
+    for (int i = 0; i < l; i++)
+    {
+            grafo1.insereVertice(i);
+    }
+    
+    do{
+        cout << "Digite 0 para parar o algoritmo." << endl;
+        cout << "Digite 1 para inserir uma aresta." << endl;
+        cout << "Digite 2 para imprimir o grau de um vertice." << endl;
+        cout << "Digite 3 para imprimir o peso de uma aresta." << endl;
+        cout << "Digite 4 para imprimir a matriz de adjacencias" << endl;
+        cout << "Digite 5 para imprimir a lista de vertices." << endl;
+        cin >> opcao;
+            if(opcao == 1){
+
+                cout << "Digite o vertice de saida:" << endl;
+                cin >> itemA;
+                cout << "Digite o vertice de entrada" << endl;
+                cin >> itemB;
+                cout << "Digite o peso desta aresta: " << endl;
+                cin >> peso;
+                grafo1.insereAresta(itemA,itemB,peso);
+
+            }else if(opcao == 2){
+
+                cout << "Digite o vertice :" << endl;
+                cin >> itemA;
+                valor = grafo1.obterGrau(itemA);
+                cout<< "O grau desse vertice e: "<< valor << endl;
+
+            }else if(opcao == 3){
+
+                cout << "Digite o vertice de saida:" << endl;
+                cin >> itemA;
+                cout << "Digite o vertice de entrada" << endl;
+                cin >> itemB;
+                valor = grafo1.obterPeso(itemA,itemB);
+                cout<< "O peso dessa aresta e: " << valor << endl;
+
+            }else if(opcao == 4){
+
+                grafo1.imprimirMatriz();
+
+            }else if(opcao == 5){
+
+                grafo1.imprimirVertices();
+
+            }
+
+    }while(opcao != 0);
+    /*int m[l][c];
     for (int i = 0; i < l; i++)
     {
         for (int j = 0; j < c; j++)
@@ -44,6 +99,6 @@ int main()
         }
         arqA << "\n";
     }
-    arqA.close();
+    arqA.close();*/
     return 0;
 }
